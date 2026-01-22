@@ -1,0 +1,31 @@
+{
+  "name": "mse-radio-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "convex dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansdoebel/mse-radio-app.git"
+  },
+  "keywords": [],
+  "author": "Hans Döbel",
+  "contributors": [
+    "Simon Schrödl"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hansdoebel/mse-radio-app/issues"
+  },
+  "homepage": "https://github.com/hansdoebel/mse-radio-app#readme",
+  "dependencies": {
+    "convex": "^1.31.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "typescript": "^5.9.3"
+  }
+}

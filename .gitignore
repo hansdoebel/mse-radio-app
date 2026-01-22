@@ -1,0 +1,34 @@
+# Android/Gradle build
+.gradle/
+/build/
+/app/build/
+/captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# IDE
+.idea/
+*.iml
+
+# Local configuration
+local.properties
+.env.local
+
+# Kotlin
+.kotlin/
+
+# Native build
+.cxx/
+.externalNativeBuild/
+
+# Node
+node_modules/
+bun.lock
+
+# Convex
+convex/_generated/
+
+# macOS
+.DS_Store
