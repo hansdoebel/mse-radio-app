@@ -218,3 +218,27 @@ class UserRepository private constructor() {
         }
     }
 }
+
+internal fun normalizeEmail(raw: String): String = raw.trim()
+
+internal fun isValidEmail(raw: String): Boolean {
+    val email = normalizeEmail(raw)
+    if (email.isEmpty()) return false
+    if (email.contains(" ")) return false
+
+    val at = email.indexOf('@')
+    if (at <= 0) return false
+    if (at != email.lastIndexOf('@')) return false
+
+    val domain = email.substring(at + 1)
+    if (domain.isBlank()) return false
+    if (!domain.contains('.')) return false
+    if (domain.startsWith('.') || domain.endsWith('.')) return false
+
+    return true
+}
+
+internal fun isPasswordValid(raw: String, minLength: Int = 8): Boolean {
+    return raw.isNotBlank() && raw.length >= minLength
+}
+

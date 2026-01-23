@@ -116,3 +116,11 @@ class PlaylistsRepository private constructor() {
         }
     }
 }
+
+internal fun sanitizePlaylists(input: List<PlaylistWithId>): List<Playlist> {
+    return input
+        .map { Playlist(id = it.id, name = it.name.trim()) }
+        .filter { it.name.isNotBlank() }
+        .distinctBy { it.name.lowercase() }
+}
+
