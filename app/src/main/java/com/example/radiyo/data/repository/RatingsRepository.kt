@@ -125,3 +125,14 @@ class RatingsRepository private constructor() {
         }
     }
 }
+
+internal fun isRatingValid(value: Int, min: Int = 1, max: Int = 5): Boolean {
+    return value in min..max
+}
+
+internal fun normalizeComment(raw: String?): String? {
+    val t = raw?.trim()
+    return if (t.isNullOrEmpty()) null else t
+}
+
+
