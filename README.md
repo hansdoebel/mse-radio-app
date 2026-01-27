@@ -17,6 +17,7 @@ Eine interaktive Radio-Streaming-Anwendung für Android, die Zuhörer:innen und 
 - [Repository-Struktur](#repository-struktur)
 - [Umgebungsvariablen](#umgebungsvariablen)
 - [Datenbankschema](#datenbankschema)
+- [Tests](#tests)
 - [Demo](#demo)
 - [Ressourcen](#ressourcen)
 - [Lizenz](#lizenz)
@@ -173,6 +174,37 @@ mse-radio-app/
 | `nowPlaying`   | Aktuell spielender Titel                         |
 | `ratings`      | Benutzerbewertungen für Playlists und Moderatoren|
 | `songRequests` | Songwünsche mit Status-Tracking                  |
+
+## Tests
+
+Das Projekt enthält Unit-Tests für die Validierungslogik und Geschäftsregeln.
+
+### Tests ausführen
+
+```bash
+./gradlew test
+```
+
+### Testübersicht
+
+| Testklasse              | Beschreibung                                      |
+|-------------------------|---------------------------------------------------|
+| `EmailValidatorTest`    | E-Mail-Validierung (Format, Whitespace-Trimming)  |
+| `PasswordRulesTest`     | Passwort-Validierung (Mindestlänge, Leerzeichen)  |
+| `RatingRulesTest`       | Bewertungsregeln (Wertebereich 1-5, Kommentare)   |
+| `PlaylistRulesTest`     | Playlist-Sanitierung (leere Namen, Duplikate)     |
+| `InAppNotificationTest` | Benachrichtigungsformatierung (Titel, Nachrichten)|
+
+### Teststruktur
+
+```
+app/src/test/java/com/example/radiyo/
+├── EmailValidatorTest.kt
+├── InAppNotificationTest.kt
+├── PasswordRulesTest.kt
+├── PlaylistRulesTest.kt
+└── RatingRulesTest.kt
+```
 
 ## Demo
 
